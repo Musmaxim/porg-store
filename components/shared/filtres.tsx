@@ -1,9 +1,10 @@
 import { cn } from "@/lib/utils";
 import React, { FC } from "react";
 import { Title } from "./title";
-import FilterCheckBox from "./filter-checkbox";
+import { FilterCheckBox } from "./filter-checkbox";
 import { Input } from "../ui/input";
 import { RangeSlider } from "./range-slider";
+import { CheckboxFilterGroup } from "./checkbox-filter-group";
 
 type Props = {
   className?: string;
@@ -35,8 +36,65 @@ const Filtres: FC<Props> = ({ className }) => {
             defaultValue={1000}
           />
         </div>
-        <RangeSlider min={0} max={1000} step={10} defaultValue={[0, 1000]} />
+        <RangeSlider min={0} max={1000} step={10} />
       </div>
+      <CheckboxFilterGroup
+        title="Ингридиенты"
+        className="mt-5"
+        limit={6}
+        defaultItems={[
+          {
+            text: "Сырный соус",
+            value: "1",
+          },
+          {
+            text: "Моцарелла",
+            value: "2",
+          },
+          {
+            text: "Соленые огурчики",
+            value: "3",
+          },
+          {
+            text: "Чеснок",
+            value: "4",
+          },
+          {
+            text: "Красный лук",
+            value: "5",
+          },
+          {
+            text: "Томаты",
+            value: "6",
+          },
+        ]}
+        items={[
+          {
+            text: "Сырный соус",
+            value: "1",
+          },
+          {
+            text: "Моцарелла",
+            value: "2",
+          },
+          {
+            text: "Соленые огурчики",
+            value: "3",
+          },
+          {
+            text: "Чеснок",
+            value: "4",
+          },
+          {
+            text: "Красный лук",
+            value: "5",
+          },
+          {
+            text: "Томаты",
+            value: "6",
+          },
+        ]}
+      />
     </div>
   );
 };

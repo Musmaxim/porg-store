@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from "react";
 import { Checkbox } from "../ui/checkbox";
 
-export interface Props {
+export interface FilterCheckBoxProps {
   text: string;
   value: string;
   endAdorment?: ReactNode;
@@ -9,7 +9,7 @@ export interface Props {
   checked?: boolean;
 }
 
-const FilterCheckBox: FC<Props> = ({
+export const FilterCheckBox: FC<FilterCheckBoxProps> = ({
   text,
   value,
   endAdorment,
@@ -35,5 +35,3 @@ const FilterCheckBox: FC<Props> = ({
     </div>
   );
 };
-
-export default FilterCheckBox;
