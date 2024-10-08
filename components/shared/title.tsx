@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React from "react";
+import React, { FC } from "react";
 
 type TitleSize = "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
 
@@ -9,7 +9,7 @@ interface Props {
   text: string;
 }
 
-export const Title: React.FC<Props> = ({ text, size = "sm", className }) => {
+export const Title: FC<Props> = ({ text, size = "sm", className }) => {
   const mapTagBySize = {
     xs: "h5",
     sm: "h4",
