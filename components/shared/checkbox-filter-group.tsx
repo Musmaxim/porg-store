@@ -11,25 +11,28 @@ type Item = FilterCheckBoxProps;
 interface Props {
   title: string;
   items: Item[];
-  defaultItems: Item[];
-  limit: number;
+  defaultItems?: Item[];
+  limit?: number;
   loading?: boolean;
   searchInputPlaceholder?: string;
-  onChange?: (values: string[]) => void;
+  onClickChekbox?: (id:string) => void;
+  selected?: Set<string>;
   defaultValue?: string[];
-  className: string;
+  className?: string;
+  name?: string;
 }
 
 export const CheckboxFilterGroup: FC<Props> = ({
   title,
   items,
   defaultItems,
-  limit,
+  limit=5,
   loading,
   searchInputPlaceholder = "Поиск...",
   className,
-  onChange,
-  defaultValue,
+  onClickChekbox,
+  selected,
+  name,
 }) => {
   const [showAll, setShowAll] = useState(false);
 
@@ -55,7 +58,7 @@ export const CheckboxFilterGroup: FC<Props> = ({
     ? items.filter((item) =>
         item.text.toLowerCase().includes(searchValue.toLocaleLowerCase())
       )
-    : defaultItems;
+    : (defaultItems || items).slice(0, limit);
 
   return (
     <div className={className}>
@@ -72,14 +75,15 @@ export const CheckboxFilterGroup: FC<Props> = ({
       )}
 
       <div className="flex flex-col gap-4 max-h-96 pr-2 overflow-auto scrollbar">
-        {list.map((item, index) => (
+        {list && list.map((item, index) => (
           <FilterCheckBox
             key={index}
             text={item.text}
             value={item.value}
             endAdorment={item.endAdorment}
-            checked={false}
-            onCheckedChange={(test) => console.log(test)}
+            checked={selected?.has(item.value)}
+            onCheckedChange={()=> onClickChekbox?.(item.value)}
+            name={name}
           />
         ))}
       </div>
