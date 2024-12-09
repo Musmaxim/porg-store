@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FC } from "react";
 import { MdSearch } from "react-icons/md";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { ModeToggle } from "@/components/ui/mode-toggle";
 
 interface HeaderStaticProps {
   className?: string;
@@ -10,7 +11,7 @@ interface HeaderStaticProps {
 
 const HeaderStatic: FC<HeaderStaticProps> = ({ className }) => {
   return (
-    <header className={cn(className, "bg-stone-200 shadow")}>
+    <header className={cn(className,  "shadow")}>
       <div className="flex justify-between items-center max-w-full mx-auto px-8 py-2 sm:px-6 lg:px-10">
         {/* Логотип */}
         <div className="flex-shrink-0">
@@ -35,21 +36,22 @@ const HeaderStatic: FC<HeaderStaticProps> = ({ className }) => {
 
         {/* Навигация для больших экранов */}
         <div className="hidden md:flex space-x-4 text-lg font-bold">
+          <ModeToggle/>
           <Link
             href="/about"
-            className="flex justify-center items-center border border-black rounded-lg w-24 h-10 text-gray-700 hover:bg-gray-300 transition duration-200"
+            className="flex justify-center items-center border border-black dark:border-white rounded-lg w-24 h-10 hover:bg-gray-300 dark:hover:bg-gray-800 transition duration-200"
           >
             Мы
           </Link>
           <Link
             href="/products"
-            className="flex justify-center items-center border border-black rounded-lg w-24 h-10 text-gray-700 hover:bg-gray-300 transition duration-200"
+            className="flex justify-center items-center border border-black dark:border-white rounded-lg w-24 h-10  hover:bg-gray-300 dark:hover:bg-gray-800 transition duration-200"
           >
             Товары
           </Link>
           <Link
             href="/contact"
-            className="flex justify-center items-center border border-black rounded-lg w-24 h-10 text-gray-700 hover:bg-gray-300 transition duration-200"
+            className="flex justify-center items-center border border-black dark:border-white rounded-lg w-24 h-10  hover:bg-gray-300 dark:hover:bg-gray-800 transition duration-200"
           >
             Услуги
           </Link>
