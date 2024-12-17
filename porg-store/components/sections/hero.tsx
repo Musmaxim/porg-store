@@ -7,50 +7,15 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { slides } from "@/lib/temporary";
 import Autoplay from "embla-carousel-autoplay";
 
 const Hero = () => {
-  const slides = [
-    {
-      src: "/images/dog1.jpg",
-      alt: "Собака 1",
-      title: "Собака 1",
-      description: "Это описание для собаки 1.",
-    },
-    {
-      src: "/images/dog2.jpg",
-      alt: "Собака 2",
-      title: "Собака 2",
-      description: "Это описание для собаки 2.",
-    },
-    {
-      src: "/images/dog3.jpg",
-      alt: "Собака 3",
-      title: "Собака 3",
-      description: "Это описание для собаки 3.",
-    },
-    {
-      src: "/images/dog1.jpg",
-      alt: "Собака 1",
-      title: "Собака 1",
-      description: "Это описание для собаки 1.",
-    },
-    {
-      src: "/images/dog2.jpg",
-      alt: "Собака 2",
-      title: "Собака 2",
-      description: "Это описание для собаки 2.",
-    },
-    {
-      src: "/images/dog3.jpg",
-      alt: "Собака 3",
-      title: "Собака 3",
-      description: "Это описание для собаки 3.",
-    },
-  ];
+  
+
 
   return (
-    <section className="relative">
+    <section>
       <Carousel
         plugins={[
           Autoplay({

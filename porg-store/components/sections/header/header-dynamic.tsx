@@ -53,7 +53,7 @@ const HeaderDynamic: FC<HeaderDynamicProps> = ({ className }) => {
           onClick={toggleMenu}
           className="md:hidden dark:white focus:outline-none"
         >
-          <MdDehaze size={25}/>
+          <MdDehaze size={25} />
         </button>
         <div className="mx-4">
           <ModeToggle />
@@ -76,12 +76,20 @@ const HeaderDynamic: FC<HeaderDynamicProps> = ({ className }) => {
         </Link>
       </div>
 
+      {/* Оверлей */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40" // Затемняющий оверлей
+          onClick={closeMenu} // Закрыть меню при клике на оверлей
+        />
+      )}
+
       {/* Меню */}
       <div
         ref={menuRef}
         className={`fixed top-0 left-0 h-full w-64 bg-stone-200 dark:bg-stone-800 shadow-lg transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        } z-50`}
       >
         <div className="flex justify-between items-center p-4">
           <h2 className="text-lg font-bold">Меню</h2>
@@ -96,7 +104,7 @@ const HeaderDynamic: FC<HeaderDynamicProps> = ({ className }) => {
             </div>
           </Link>
           <Link href="/contact">
-            <div className="block text-gray-700 dark:text-white text-lg font-bold py-2 px-8 border-b border-transparent rounded-lg  hover:bg-gray-300 cursor-pointer transition duration-200">
+            <div className="block text-gray-700 dark:text-white text-lg font-bold py-2 px-8 border-b border-transparent rounded-lg hover:bg-gray-300 cursor-pointer transition duration-200">
               Контакты
             </div>
           </Link>
