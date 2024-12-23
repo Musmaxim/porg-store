@@ -19,7 +19,7 @@ interface ProductsProps {
 const Products: React.FC<ProductsProps> = ({ products }) => {
   const [currentProduct, setCurrentProduct] = useState<ProductData | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 15;
+  const itemsPerPage = 12;
 
   const handleProductClick = (product: ProductData) => {
     setCurrentProduct(product);
@@ -33,7 +33,7 @@ const Products: React.FC<ProductsProps> = ({ products }) => {
   const displayedProducts = products.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
   return (
-    <section>
+    <section className='px-8'>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 py-4">
         {displayedProducts.map((product) => (
           <Product key={product.id} product={product} onClick={() => handleProductClick(product)} />

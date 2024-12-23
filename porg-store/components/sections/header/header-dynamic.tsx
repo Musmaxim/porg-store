@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, FC } from "react";
 import Link from "next/link";
-import { cn } from "@/lib/utils"; // Убедитесь, что этот импорт корректен
+import { cn } from "@/lib/utils";
 import { MdDehaze, MdSearch } from "react-icons/md";
 import { MdOutlineClose } from "react-icons/md";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -27,7 +27,7 @@ const HeaderDynamic: FC<HeaderDynamicProps> = ({ className }) => {
 
   const handleResize = () => {
     if (window.innerWidth > 768) {
-      closeMenu(); // Закрыть меню, если ширина экрана превышает 768px
+      closeMenu(); 
     }
   };
 
@@ -59,12 +59,12 @@ const HeaderDynamic: FC<HeaderDynamicProps> = ({ className }) => {
           <ModeToggle />
         </div>
         {/* Строка поиска */}
-        <div className="flex-grow mx-4 flex justify-center">
+        <div className="flex-grow mx-4 flex justify-center ">
           <div className="relative w-full max-w-md">
             <input
               type="text"
               placeholder="Поиск товаров..."
-              className="border rounded-lg py-2 pl-10 pr-4 text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+              className="border rounded-lg py-2 pl-10 pr-4 text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full dark:border-white"
             />
             <button className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-transparent border-none cursor-pointer">
               <MdSearch className="text-gray-700" size={25} />

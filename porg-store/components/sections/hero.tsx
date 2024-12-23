@@ -15,7 +15,7 @@ const Hero = () => {
 
 
   return (
-    <section>
+    <section className="px-8">
       <Carousel
         plugins={[
           Autoplay({

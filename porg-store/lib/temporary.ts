@@ -165,3 +165,30 @@ export const slides = [
       image: '/images/Corm.jpg', // Замените на ваш путь к изображению
     },
   ];
+
+  export const services = [
+    {
+      id: 1,
+      title: "Услуга 1",
+      description: "Краткое описание услуги 1.",
+      image: "images/HairCut.jpg",
+    },
+    {
+      id: 2,
+      title: "Услуга 2",
+      description: "Краткое описание услуги 2.",
+      image: "images/Gruming.jpg",
+    },
+    {
+      id: 3,
+      title: "Услуга 3",
+      description: "Краткое описание услуги 3.",
+      image: "images/Doctor.jpg",
+    },
+    {
+      id: 4,
+      title: "Услуга 4",
+      description: "Краткое описание услуги 4.",
+      image: "images/Walk.jpg",
+    },
+  ];
