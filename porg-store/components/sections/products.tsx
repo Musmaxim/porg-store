@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import Product from '../component/product'; 
 import Popup from '../component/popup'; 
+import {AiOutlineArrowLeft } from "react-icons/ai";
+import {AiOutlineArrowRight } from "react-icons/ai";
 
 interface ProductData {
   id: number;
@@ -33,8 +35,9 @@ const Products: React.FC<ProductsProps> = ({ products }) => {
   const displayedProducts = products.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
   return (
-    <section className='px-8'>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 py-4">
+    <section className='px-8 py-8'>
+      <h2 className="text-3xl font-bold text-center">Наши Товары</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 py-4 h-90">
         {displayedProducts.map((product) => (
           <Product key={product.id} product={product} onClick={() => handleProductClick(product)} />
         ))}
@@ -48,12 +51,12 @@ const Products: React.FC<ProductsProps> = ({ products }) => {
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
           disabled={currentPage === 1}
         >
-          &lt; {/* Стрелочка влево */}
+         <AiOutlineArrowLeft color='white'/>
         </button>
         {Array.from({ length: totalPages }, (_, index) => (
           <button
             key={index}
-            className={`mx-1 px-3 py-1 rounded ${currentPage === index + 1 ? 'bg-orange-500 text-white' : 'bg-gray-400'}`}
+            className={`mx-1 px-3 py-1 rounded text-white ${currentPage === index + 1 ? 'bg-gray-400' : 'bg-gray-600'}`}
             onClick={() => setCurrentPage(index + 1)}
           >
             {index + 1}
@@ -64,7 +67,7 @@ const Products: React.FC<ProductsProps> = ({ products }) => {
           onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
           disabled={currentPage === totalPages}
         >
-          &gt; {/* Стрелочка вправо */}
+          <AiOutlineArrowRight color='white'/>
         </button>
       </div>
     </section>

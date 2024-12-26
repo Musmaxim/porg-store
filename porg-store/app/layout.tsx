@@ -4,6 +4,7 @@ import "./globals.css";
 import HeaderStatic from "@/components/sections/header/header-static";
 import HeaderDynamic from "@/components/sections/header/header-dynamic";
 import { ThemeProvider } from "@/components/theme-provider";
+import Footer from "@/components/sections/footer";
 
 const roboto = Roboto({
   subsets:['cyrillic'],
@@ -34,6 +35,7 @@ export default function RootLayout({
         <HeaderStatic className="hidden md:block" />
         <HeaderDynamic className="block md:hidden" />
         {children}
+        <Footer/>
         </ThemeProvider>
       </body>
     </html>

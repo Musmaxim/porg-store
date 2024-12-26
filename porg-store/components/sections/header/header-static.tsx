@@ -11,8 +11,8 @@ interface HeaderStaticProps {
 
 const HeaderStatic: FC<HeaderStaticProps> = ({ className }) => {
   return (
-    <header className={cn(className, "shadow")}>
-      <div className="flex justify-between items-center max-w-full mx-auto px-8 py-2 sm:px-6 lg:px-10">
+    <header className={cn(className, "shadow, h-20")}>
+      <div className="flex justify-between items-center max-w-full mx-auto px-8 py-4 sm:px-6 lg:px-10">
         {/* Логотип */}
         <div className="flex-shrink-0">
           <Link href="/" className="text-2xl lg:text-3xl font-bold">
