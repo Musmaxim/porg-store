@@ -1,4 +1,3 @@
-// components/Product.tsx
 import React from 'react';
 import Image from 'next/image';
 import { AiOutlineShoppingCart } from 'react-icons/ai';

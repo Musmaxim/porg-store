@@ -1,4 +1,3 @@
-// components/Popup.tsx
 import React, { useEffect } from "react";
 import Image from "next/image";
 import { MdOutlineClose } from "react-icons/md";
@@ -16,7 +15,6 @@ interface PopupProps {
 }
 
 const Popup: React.FC<PopupProps> = ({ product, onClose }) => {
-  // Эффект для отключения прокрутки
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {

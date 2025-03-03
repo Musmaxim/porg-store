@@ -1,4 +1,3 @@
-// components/Footer.tsx
 import Link from 'next/link';
 import { FaEnvelope, FaPhone, FaTelegramPlane } from 'react-icons/fa';
 import { Separator } from '../ui/separator';

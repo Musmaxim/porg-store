@@ -79,8 +79,8 @@ const HeaderDynamic: FC<HeaderDynamicProps> = ({ className }) => {
       {/* Оверлей */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40" // Затемняющий оверлей
-          onClick={closeMenu} // Закрыть меню при клике на оверлей
+          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          onClick={closeMenu}
         />
       )}
 
